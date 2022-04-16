@@ -1,0 +1,166 @@
+.login_signup_wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: red;*/
+    background-color: rgb(231, 231, 231);
+}
+
+.login_signup_container{
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease-in;
+    background-color: white;
+    width: 25vw;
+    height: 70vh;
+}
+
+.login_signup_buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.login_button{
+    cursor: pointer;
+    color: tomato;
+    display: flex;
+    padding: 2vh;
+    transition: all 0.3s ease-in;
+    border-bottom: 2px solid red;
+    justify-content: center;
+    flex: 1;
+}
+
+.register_button{
+    cursor: pointer;
+    display: flex;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease-in;
+    padding: 2vh;
+    justify-content: center;
+    flex: 1;
+}
+
+.login_form{
+    display: flex;
+    padding: 2vw;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70%;
+}
+
+.login_form>div>svg{
+    color: rgba(0,0,0,0.623);
+}
+
+.login_form>a{
+    color: rgba(0,0,0,0.651);
+    text-decoration: none;
+    align-self: flex-end;
+    transition: all 0.5s;
+    font: 500 0.8vmax "Gill Sans";
+}
+
+.login_form>a:hover{
+    color: black;
+}
+
+.login_form>div{
+    border: 1px solid rgba(0,0,0,0.267);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_form>div>input{
+    outline: none;
+    padding: 1vmax;
+    border: none;
+    font: 300 1.2vmax cursive;
+}
+
+.login_form>input{
+    background-color: tomato;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.5s;
+    border-radius: 4px;
+    padding: 0.8vmax;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.219);
+}
+
+.register_form>input{
+    background-color: tomato;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.5s;
+    border-radius: 4px;
+    padding: 0.8vmax;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.219);
+}
+
+/*.login_email{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.login_password{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+
+.register_form{
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2vw;
+    height: 100%;
+}
+
+.register_form>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.267);
+}
+
+.register_form>div>input{
+    outline: none;
+    padding: 1vmax;
+    border: none;
+    font: 300 1.2vmax cursive;
+}
+
+.register_form>div>svg{
+    color: rgba(0,0,0,0.623);
+}
+
+.register_image>img{
+    width: 3vmax;
+    border-radius: 100%;
+}
+
+.register_image>input::file-selector-button{
+    cursor: pointer;
+    width: 100%;
+    z-index: 2;
+    height: 5vh;
+    border: none;
+    margin-right: 20px;
+    font: 400 0.8vmax cursive;
+    transition: all 0.5s;
+    padding: 0 1vmax;
+    color: rgba(0, 0, 0, 0.623);
+    /*background-color: rgb(255, 255, 255);*/
+}
+
+.register_image > input::file-selector-button:hover {
+    /*background-color: rgb(235, 235, 235);*/
+}
