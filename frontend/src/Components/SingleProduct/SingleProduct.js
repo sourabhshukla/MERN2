@@ -61,7 +61,7 @@ const SingleProduct = () => {
     const reviewSubmitHandler = () => {
         const myForm = new FormData();
 
-        myForm.set("rating", rating);
+        myForm.set("rating", rating.toString());
         myForm.set("comment", comment);
         myForm.set("productId", id);
 
@@ -142,7 +142,7 @@ const SingleProduct = () => {
                                <div className="detailsBlock-3-1">
                                    <div className="detailsBlock-3-1-1">
                                        <button onClick={decreaseQuantity}>-</button>
-                                       <input readOnly type="number" value="1"/>
+                                       <input readOnly type="number" value={quantity}/>
                                        <button onClick={increaseQuantity}>+</button>
                                    </div>
                                    <button

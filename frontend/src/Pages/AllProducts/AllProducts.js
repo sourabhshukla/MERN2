@@ -8,28 +8,43 @@ import Pagination from "react-js-pagination"
 import ReactStars from "react-rating-stars-component/dist/react-stars";
 import {useDispatch, useSelector} from "react-redux";
 import {getProduct} from "../../actions/productAction";
-import {useParams, Link} from "react-router-dom";
+import {useParams, Link, useLocation} from "react-router-dom";
 import {Rating} from "@mui/lab";
 
 const AllProducts = () => {
 
     const dispatch = useDispatch();
+    const location=useLocation();
+    let category1=null;
+    if(location.state!=null){
+        let {category2} = location.state;
+        console.log("category2="+category1);
+        category1=category2;
+    }
     const {products,loading,productsCount,resultPerPage,filteredProductsCount} = useSelector(state=>state.products);
     const [price, setPrice] = useState([0,25000]);
-    const [category, setCategory] = useState("");
+    const [category, setCategory] = useState(category1);
+    console.log("category="+category);
+
     const [rating, setRating] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
     const min = useRef(price[0]);
     const max = useRef(price[1]);
-    const category_input = useRef(null);
-    console.log(rating);
+    const category_input = useRef(category==null ? "All" : `${category}`);
+   // category_input.current.value.checked=true;
+
 
     let {keyword} = useParams();
+
+
     let count = filteredProductsCount;
 
     useEffect(()=>{
+        if(category1==null){
+         //   console.log(category1);
+        }
         dispatch(getProduct(keyword,price,category,currentPage,rating));
-    },[dispatch,keyword,price,category,currentPage,rating]);
+    },[dispatch,keyword,price,category,category1,currentPage,rating]);
 
     const onRatingsChanged=(new_rating)=>{
         alert(new_rating);
@@ -67,6 +82,11 @@ const AllProducts = () => {
         onChange: setRating
     }
 
+    const options3={
+        edit: true,
+        precision: 0.5,
+    }
+
     const priceHandler = (e) => {
         e.preventDefault();
         setPrice([min.current.value, max.current.value]);
@@ -87,14 +107,15 @@ const AllProducts = () => {
                     <fieldset className="filters_container_categories">
                         <legend>Categories</legend>
                         <div className="filters_category_item" key="all">
-                            <input type="radio" id="All" value="" ref={category_input}
+                            <input type="radio" id="All" value="" ref={category_input} checked={category === null || category===""}
                                    name="categories" onChange={categoryChangeHandler}/>
                             <label htmlFor="All">All</label>
                         </div>
-                        {categories.map((category,index)=>(
+                        {categories.map((cat,index)=>(
                             <div className="filters_category_item" key={index}>
-                                <input type="radio" id={category.title} value={category.title} ref={category_input} name="categories" onChange={categoryChangeHandler}/>
-                                <label for={category.title}>{category.title}</label>
+                                <input type="radio" id={cat.title} value={cat.title} checked={category===cat.title}
+                                       ref={category_input} name="categories" onChange={categoryChangeHandler}/>
+                                <label for={cat.title}>{cat.title}</label>
                             </div>
                         ))}
                     </fieldset>
@@ -108,7 +129,10 @@ const AllProducts = () => {
 
                     <fieldset className="filters_container_ratings">
                         <legend>Ratings Above</legend>
-                        <ReactStars {...options2} />
+                        {/*<ReactStars {...options2} />*/}
+                        <Rating {...options3} onChange={(event, newValue)=>{
+                            setRating(newValue);
+                        }}/>
                     </fieldset>
                 </form>
             </div>

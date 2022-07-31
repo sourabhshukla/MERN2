@@ -194,8 +194,8 @@ exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
 
     if(isReviewed){
         product.reviews.forEach((rev) => {
-            console.log(rev.userId.toString());
-            console.log(req.user._id.toString());
+            // console.log(rev.userId.toString());
+            // console.log(req.user._id.toString());
             if(rev.userId.toString()===req.user._id.toString()){
               rev.rating=rating;
               rev.comment=comment;

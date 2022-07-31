@@ -28,10 +28,11 @@
 }
 
 .category_container{
-    padding: 10px;
+    /*padding: 10px;*/
     /*border: 1px solid red;*/
+    box-shadow: 3px 3px #e7e7e7;
     margin: 4px;
-    background-color: #e3dfdf;
+    /*background-color: #e3dfdf;*/
 }
 
 .category_container:hover{
@@ -41,8 +42,8 @@
 }
 
 .category_container>img{
-    width:22vw;
-    height: 32vw;
+    width: 18vw;
+    height: 24vw;
 }
 
 .category_container > h3{

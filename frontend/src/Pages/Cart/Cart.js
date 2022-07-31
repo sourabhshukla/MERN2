@@ -53,7 +53,7 @@ const Cart = () => {
         <Fragment>
             {cartItems.length === 0 ? (
                 <div className="emptyCart">
-                    <RemoveShoppingCartIcon/>
+                    <RemoveShoppingCartIcon />
                     <Typography>No Product in Your Cart</Typography>
                     <Link to="/products">View Products</Link>
                 </div>

@@ -9,7 +9,9 @@ body{
 
 .header_container{
     z-index: 1999;
-    background-color: #61dafb;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 0 10px #ddd;
     width: 100vw;
     height: 5vw;
     display: flex;
@@ -27,6 +29,7 @@ body{
 .header_left > h2{
     margin-left: 1vw;
     font-size: 1.3vw;
+    cursor: pointer;
 }
 
 .header_right{
@@ -102,7 +105,7 @@ body{
         justify-content:flex-start;
         border-radius: 2.5vw;
         align-items: center;
-        border: 0.13vw solid red;
+        border: 0.13vw solid #bdbdbd;
         padding-top: 0.3vw;
         padding-bottom: 0.3vw;
         padding-left: 0.8vw;
@@ -227,6 +230,7 @@ body{
 
     .header_left>h2{
         font-size: 14px;
+        cursor: pointer;
     }
 
     .header_right > #cartIcon{

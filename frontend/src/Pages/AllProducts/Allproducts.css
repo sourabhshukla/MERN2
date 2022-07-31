@@ -3,7 +3,7 @@
 }
 
 .filters_container{
-    background-color: red;
+    background-color: whitesmoke;
     width: 20%;
     flex-shrink: 0;
 }
@@ -18,15 +18,15 @@
 
 .products_wrapper{
     /*transform: scale(0.5, 0.5);*/
-    padding: 1vw;
+    /*padding: 1vw;*/
     margin: 1vw;
 }
 
 .products_wrapper > img{
     /*transform: scale(0.5, 0.5);*/
     width: 200px;
-    max-width: 300px;
-    height: auto;
+    /*max-width: 300px;*/
+    height: 300px;
 }
 
 .filters_container_form{
@@ -72,6 +72,10 @@
 
 .filters_container_ratings{
     padding: 0.5vw;
+}
+
+.filters_container_ratings>div>div>span{
+    color: #bdbdbd!important;
 }
 
 .paginationBox{

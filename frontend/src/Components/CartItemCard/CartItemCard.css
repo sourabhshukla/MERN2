@@ -26,9 +26,9 @@
     color: rgba(24,24,24,0.815);
 }
 
-.CartItemCard>div>p{
+.CartItemCard>div>.DeleteIcon{
     color: tomato;
-    font: 100 0.8vmax "Roboto";
+    margin: 1vmax;
     cursor: pointer;
 }
 
@@ -54,7 +54,9 @@
         font: 300 1.9vmax "Roboto";
     }
 
-    .CartItemCard>div>p{
-        font: 100 1.8vmax "Roboto";
+    .CartItemCard>div>.DeleteIcon{
+        color: tomato;
+        margin: 1vmax;
+        cursor: pointer;
     }
 }

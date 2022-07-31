@@ -72,7 +72,7 @@ const Header = () => {
 
     const onAvatarClick=()=>{
         setMenu(!menu);
-        console.log("entered");
+        //console.log("entered");
         account_menu.current.classList.toggle('active');
     }
 
@@ -123,7 +123,7 @@ const Header = () => {
                 <div className="header_left">
                     <div className="hamburger" onClick={onMenuClick}>
                         {
-                            icon===0?<MenuIcon/>:<ClearIcon/>
+                            // icon===0?<MenuIcon/>:<ClearIcon/>
                         }
                     </div>
                     <h2 onClick={gotoHome}>ECOMMERCE</h2>
