@@ -18,6 +18,7 @@
 
 .categories_heading>h1{
     font-size: 5vw;
+    font-family: 'Uchen', serif ;
 }
 
 .product_categories{
@@ -27,10 +28,16 @@
     justify-content: center;
 }
 
+.product_categories>.category_box{
+    text-decoration: none;
+}
+
 .category_container{
     /*padding: 10px;*/
     /*border: 1px solid red;*/
     box-shadow: 3px 3px #e7e7e7;
+    display: flex;
+    flex-direction: column;
     margin: 4px;
     /*background-color: #e3dfdf;*/
 }
@@ -46,10 +53,12 @@
     height: 24vw;
 }
 
-.category_container > h3{
+.category_container > span{
     text-align: center;
     padding: 1vw;
     font-size: 2vw;
+    font-family: 'Uchen', serif ;
+    color: black;
 }
 
 @media (max-width: 900px){

@@ -22,10 +22,10 @@ const Categories = () => {
                </div>
                    <div className="product_categories">
                        {categories.map((category,index)=>(
-                           <Link to="/products" state={{category2: `${category.title}`}}>
+                           <Link to="/products" className="category_box" state={{category2: `${category.title}`}}>
                                <div className="category_container" key={index}>
                                    <img src={category.src} alt=""/>
-                                   <h3>{category.title}</h3>
+                                   <span>{category.title}</span>
                                </div>
                            </Link>
                            ))}

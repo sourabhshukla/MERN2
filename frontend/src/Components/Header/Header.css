@@ -29,6 +29,7 @@ body{
 .header_left > h2{
     margin-left: 1vw;
     font-size: 1.3vw;
+    font-family: 'Uchen', cursive;
     cursor: pointer;
 }
 
@@ -46,6 +47,7 @@ body{
 .header_container > #avatar{
     width: 100px;
     height: 100px;
+    cursor: pointer;
 }
 
 .account_menu::before{
