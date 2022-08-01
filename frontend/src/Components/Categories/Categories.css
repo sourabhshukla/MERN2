@@ -18,7 +18,7 @@
 
 .categories_heading>h1{
     font-size: 5vw;
-    font-family: 'Uchen', serif ;
+    font-family: 'Uchen', sans-serif;
 }
 
 .product_categories{
@@ -57,7 +57,7 @@
     text-align: center;
     padding: 1vw;
     font-size: 2vw;
-    font-family: 'Uchen', serif ;
+    font-family: 'Uchen', sans-serif;
     color: black;
 }
 
