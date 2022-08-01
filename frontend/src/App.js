@@ -9,6 +9,7 @@ import {
     Route
 } from "react-router-dom";
 import store from "./store";
+import Shipping from "./Pages/Shipping/Shipping";
 import {loadUser} from "./actions/userAction";
 import ProtectedRoute from "./Components/Route/ProtectedRoute";
 import axios from "axios";
@@ -33,7 +34,7 @@ const ResetPassword = lazy(()=>import('./Pages/ResetPassword/ResetPassword'));
 // import Cart from "./Pages/Cart/Cart";
 const Cart = lazy(()=>import('./Pages/Cart/Cart'));
 // import Shipping from "./Pages/Shipping/Shipping";
-const Shipping = lazy(()=>import('./Pages/Shipping/Shipping'));
+// const Shipping = lazy(()=>import('./Pages/Shipping/Shipping'));
 // import ConfirmOrder from "./Pages/ConfirmOrder/ConfirmOrder";
 const ConfirmOrder = lazy(()=>import('./Pages/ConfirmOrder/ConfirmOrder'));
 // import Payment from "./Pages/Payment/Payment";
