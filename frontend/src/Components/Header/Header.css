@@ -45,8 +45,8 @@ body{
 }
 
 .header_right > #avatar{
-    width: 100px;
-    height: 100px;
+    /*width: 100px;*/
+    /*height: 100px;*/
     cursor: pointer;
 }
 
