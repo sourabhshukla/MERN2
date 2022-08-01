@@ -44,11 +44,15 @@ body{
     cursor: pointer;
 }
 
-.header_container > #avatar{
+.header_right > #avatar{
     width: 100px;
     height: 100px;
     cursor: pointer;
 }
+
+/*.css-fouopf{*/
+/*    cursor: pointer;*/
+/*}*/
 
 .account_menu::before{
     position: absolute;
