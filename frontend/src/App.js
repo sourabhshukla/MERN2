@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from "./Components/Header/Header";
 import React, {useEffect, useState, Suspense, lazy} from "react";
 import WebFont from "webfontloader";
 import Home from "./Pages/Home/Home";

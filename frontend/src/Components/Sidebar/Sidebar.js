@@ -1,7 +1,6 @@
 import React from 'react';
 import "./Sidebar.css";
 import { TreeItem, TreeView } from '@mui/lab';
-import logo from "../../images/logo.png"
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import AddIcon from '@mui/icons-material/Add';
