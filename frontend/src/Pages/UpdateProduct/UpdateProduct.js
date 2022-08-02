@@ -12,6 +12,7 @@ import StorageIcon from '@mui/icons-material/Storage';
 import SpellcheckIcon from '@mui/icons-material/Spellcheck';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import {Button} from "@mui/material";
+import Header from "../../Components/Header/Header";
 
 const UpdateProduct = () => {
     const dispatch = useDispatch();
@@ -126,6 +127,7 @@ const UpdateProduct = () => {
     return (
         <Fragment>
             {/*<MetaData title="Create Product" />*/}
+            <Header/>
             <div className="dashboard">
                 <Sidebar />
                 <div className="newProductContainer">

@@ -10,6 +10,7 @@ import {DELETE_USER_RESET} from "../../constants/userConstants";
 import {Button} from "@mui/material";
 import {DataGrid} from "@mui/x-data-grid";
 import Sidebar from "../../Components/Sidebar/Sidebar";
+import Header from "../../Components/Header/Header";
 
 const UsersList = () => {
     const dispatch = useDispatch();
@@ -120,6 +121,7 @@ const UsersList = () => {
     return (
         <Fragment>
             {/*<MetaData title={`ALL USERS - Admin`} />*/}
+            <Header/>
 
             <div className="dashboard">
                 <Sidebar />

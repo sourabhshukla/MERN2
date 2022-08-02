@@ -10,6 +10,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import PersonIcon from "@mui/icons-material/Person";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import {Button} from "@mui/material";
+import Header from "../../Components/Header/Header";
 
 const UpdateUser = () => {
     const dispatch = useDispatch();
@@ -71,6 +72,7 @@ const UpdateUser = () => {
     return (
         <Fragment>
             {/*<MetaData title="Update User" />*/}
+            <Header/>
             <div className="dashboard">
                 <Sidebar />
                 <div className="newProductContainer">
