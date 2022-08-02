@@ -122,7 +122,7 @@ const OrderList = ({ history }) => {
 
             <div className="dashboard">
                 <SideBar />
-                <div className="productListContainer">
+                <div className="productsListContainer">
                     <h1 id="productListHeading">ALL ORDERS</h1>
 
                     <DataGrid

@@ -53,6 +53,10 @@
     text-decoration: underline;
 }
 
+.MuiTreeItem-label{
+    padding-bottom: 1px;
+}
+
 @media screen and (max-width: 600px) {
     .productListTable div{
         font: 300 4vw "Roboto";
