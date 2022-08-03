@@ -6,13 +6,19 @@ const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto");
 const cloudinary = require("cloudinary");
 
+
 //Register a User
 exports.registerUser = catchAsyncErrors(async(req,res,next)=>{
     const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
         folder: "avatars",
         width: 150,
         crop:"scale"
-    });
+    },
+        function(error,result){
+        if(error.message==="Could not decode base64"){
+            return next(new ErrorHandler("Image size should be less than 750KB", 500));
+        }
+        });
 
     const {name, email, password} = req.body;
 

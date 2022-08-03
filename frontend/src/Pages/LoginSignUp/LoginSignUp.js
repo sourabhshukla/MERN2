@@ -12,6 +12,7 @@ import {clearErrors, login, register} from "../../actions/userAction";
 import {useAlert} from "react-alert";
 import Loader from "../../Components/Loader/Loader";
 
+
 const LoginSignUp = () => {
 
     const dispatch=useDispatch();

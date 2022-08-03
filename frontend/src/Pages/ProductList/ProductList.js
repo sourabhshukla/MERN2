@@ -1,18 +1,20 @@
-import React, {Fragment, useEffect} from 'react';
+import React, {Fragment, lazy, useEffect,Suspense} from 'react';
 import "./ProductList.css";
 import { DataGrid } from '@mui/x-data-grid';
 import { Button } from '@mui/material';
-import Sidebar from "../../Components/Sidebar/Sidebar";
+//import Sidebar from "../../Components/Sidebar/Sidebar";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {Link, useNavigate} from "react-router-dom";
-import {admin_products as products} from "../../data";
-import Header from "../../Components/Header/Header";
+// import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import {useDispatch, useSelector} from "react-redux";
 import {useAlert} from "react-alert";
 import {clearErrors, deleteProduct, getAdminProduct} from "../../actions/productAction";
 import {DELETE_PRODUCT_RESET} from "../../constants/productConstants";
+
+const Header=lazy(()=>import('../../Components/Header/Header'));
+const Sidebar=lazy(()=>import('../../Components/Sidebar/Sidebar'));
 
 const ProductList = () => {
 
@@ -116,9 +118,15 @@ const ProductList = () => {
         })
     return (
         <Fragment>
+            <Suspense fallback={<div>Loading Header</div>}>
             <Header/>
+        </Suspense>
             <div className="dashboard">
+
+                <Suspense fallback={<div>Loading SideBar</div>}>
                 <Sidebar/>
+                </Suspense>
+
                 <div className="productsListContainer">
                     <h1 id="productListHeading">ALL PRODUCTS</h1>
 

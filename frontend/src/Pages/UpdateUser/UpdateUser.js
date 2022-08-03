@@ -11,6 +11,8 @@ import PersonIcon from "@mui/icons-material/Person";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import {Button} from "@mui/material";
 import Header from "../../Components/Header/Header";
+import "../NewProduct/NewProduct.css";
+import "../Dashboard/Dashboard.css";
 
 const UpdateUser = () => {
     const dispatch = useDispatch();
