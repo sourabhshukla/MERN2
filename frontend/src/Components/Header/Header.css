@@ -50,6 +50,13 @@ body{
     cursor: pointer;
 }
 
+#all-products-span{
+    margin-left: 2vw;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
 /*.css-fouopf{*/
 /*    cursor: pointer;*/
 /*}*/

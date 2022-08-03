@@ -1,5 +1,5 @@
 import React, {Fragment, useEffect, useRef, useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
@@ -145,11 +145,13 @@ const Header = () => {
                         <ClearIcon id="clearIcon" onClick={onClearClick}/>
                     </div>
                     </form>
+                    <Link to="/products" id="all-products-span">All Products</Link>
                     <ShoppingCartOutlinedIcon id="cartIcon" onClick={onCartClick}/>
                     <Avatar onClick={onAvatarClick} src={profilePic}  id="avatar" sx={{ width: 35, height: 35 }}/>
 
                 </div>
             </div>
+
             <form onSubmit={searchSubmitHandler}>
             <div className="header_search_container1" ref={input_bar2} id="dropdown_search_bar">
                 <SearchIcon/>
@@ -163,6 +165,7 @@ const Header = () => {
                 <ClearIcon/>
             </div>
             </form>
+
             <div className="account_menu"  ref={account_menu} style={{display: menu ? 'flex' : 'none'}}>
                 <ul>
                     {options.map((item) => (

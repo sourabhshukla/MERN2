@@ -151,7 +151,7 @@ const AllProducts = () => {
                     <Link to = {`/product/${product._id}`}>
                         <div className="products_wrapper" key={index}>
                             <img src={product.images[0].url} alt=""/>
-                            <p>{product.name}</p>
+                            <p id="product-name">{product.name}</p>
                             <Rating {...options}
                                         value = {product.ratings}/>
                             <p>({product.numOfReviews} Reviews)</p>
