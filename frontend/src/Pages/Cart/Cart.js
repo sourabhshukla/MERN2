@@ -52,11 +52,14 @@ const Cart = () => {
     return (
         <Fragment>
             {cartItems.length === 0 ? (
+                <Fragment>
+                    <Header/>
                 <div className="emptyCart">
                     <RemoveShoppingCartIcon />
                     <Typography>No Product in Your Cart</Typography>
                     <Link to="/products">View Products</Link>
                 </div>
+                </Fragment>
             ) : (
                 <Fragment>
                     <Header/>
