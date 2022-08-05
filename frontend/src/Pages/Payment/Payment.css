@@ -1,8 +1,12 @@
+.checkout-steps{
+    margin-top: 20px;
+}
+
 .paymentContainer {
     display: grid;
     place-items: center;
     background-color: rgb(255, 255, 255);
-    height: 65vh;
+    height: 500px;
     margin: 2vmax;
 }
 
@@ -46,6 +50,7 @@
 
 .paymentFormBtn {
     border: none;
+    border-radius: 4px;
     background-color: tomato;
     color: white;
     font: 300 0.9vmax "Roboto";
@@ -84,7 +89,7 @@
     }
 
     .paymentFormBtn {
-        font: 300 4vw "Roboto";
+        font: 300 15px "Roboto";
         padding: 4vw;
     }
 }

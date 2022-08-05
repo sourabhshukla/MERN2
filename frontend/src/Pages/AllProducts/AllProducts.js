@@ -24,7 +24,7 @@ const AllProducts = () => {
     const {products,loading,productsCount,resultPerPage,filteredProductsCount} = useSelector(state=>state.products);
     const [price, setPrice] = useState([0,25000]);
     const [category, setCategory] = useState(category1);
-    console.log("category="+category);
+//    console.log("category="+category);
 
     const [rating, setRating] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
@@ -101,66 +101,69 @@ const AllProducts = () => {
     return (
         <Fragment>
             <Header/>
-        <div className="all_products_container">
-            <div className="filters_container">
-                <form className="filters_container_form">
-                    <fieldset className="filters_container_categories">
-                        <legend>Categories</legend>
-                        <div className="filters_category_item" key="all">
-                            <input type="radio" id="All" value="" ref={category_input} checked={category === null || category===""}
-                                   name="categories" onChange={categoryChangeHandler}/>
-                            <label htmlFor="All">All</label>
-                        </div>
-                        {categories.map((cat,index)=>(
-                            <div className="filters_category_item" key={index}>
-                                <input type="radio" id={cat.title} value={cat.title} checked={category===cat.title}
-                                       ref={category_input} name="categories" onChange={categoryChangeHandler}/>
-                                <label for={cat.title}>{cat.title}</label>
+        {/*<div className="abcd">*/}
+            <div className="all_products_container">
+                <div className="filters_container">
+                    <form className="filters_container_form">
+                        <fieldset className="filters_container_categories">
+                            <legend>Categories</legend>
+                            <div className="filters_category_item" key="all">
+                                <input type="radio" id="All" value="" ref={category_input}
+                                       checked={category === null || category === ""}
+                                       name="categories" onChange={categoryChangeHandler}/>
+                                <label htmlFor="All">All</label>
                             </div>
-                        ))}
-                    </fieldset>
+                            {categories.map((cat, index) => (
+                                <div className="filters_category_item" key={index}>
+                                    <input type="radio" id={cat.title} value={cat.title}
+                                           checked={category === cat.title}
+                                           ref={category_input} name="categories" onChange={categoryChangeHandler}/>
+                                    <label htmlFor={cat.title}>{cat.title}</label>
+                                </div>
+                            ))}
+                        </fieldset>
 
-                    <fieldset className="filters_container_price">
-                        <legend>Price</legend>
-                        <input type="text" id="min" placeholder="Min" ref={min}/>
-                        <input type="text" id="max" placeholder="Max" ref={max}/>
-                        <button onClick={priceHandler}>Go</button>
-                    </fieldset>
+                        <fieldset className="filters_container_price">
+                            <legend>Price</legend>
+                            <input type="text" id="min" placeholder="Min" ref={min}/>
+                            <input type="text" id="max" placeholder="Max" ref={max}/>
+                            <button onClick={priceHandler}>Go</button>
+                        </fieldset>
 
-                    <fieldset className="filters_container_ratings">
-                        <legend>Ratings Above</legend>
-                        {/*<ReactStars {...options2} />*/}
-                        <Rating {...options3} onChange={(event, newValue)=>{
-                            setRating(newValue);
-                        }}/>
-                    </fieldset>
-                </form>
+                        <fieldset className="filters_container_ratings">
+                            <legend>Ratings Above</legend>
+                            {/*<ReactStars {...options2} />*/}
+                            <Rating {...options3} onChange={(event, newValue) => {
+                                setRating(newValue);
+                            }}/>
+                        </fieldset>
+                    </form>
+                </div>
+                <div className="products_container">
+                    {/*{all_products.map((product, index)=>(*/}
+                    {/*    <div className="products_wrapper" key={index}>*/}
+                    {/*        <img src={product.src} alt=""/>*/}
+                    {/*        <p>{product.name}</p>*/}
+                    {/*        <ReactStars {...options}/>*/}
+                    {/*        <p>({product.numOfReviews} Reviews)</p>*/}
+                    {/*        <p>₹ {product.price}</p>*/}
+                    {/*    </div>*/}
+                    {/*))}*/}
+
+                    {products && products.map((product, index) => (
+                        <Link to={`/product/${product._id}`}>
+                            <div className="products_wrapper" key={index}>
+                                <img src={product.images[0].url} alt=""/>
+                                <p id="product-name">{product.name}</p>
+                                <Rating {...options}
+                                        value={product.ratings}/>
+                                <p>({product.numOfReviews} Reviews)</p>
+                                <p>₹ {product.price}</p>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
             </div>
-            <div className="products_container">
-                {/*{all_products.map((product, index)=>(*/}
-                {/*    <div className="products_wrapper" key={index}>*/}
-                {/*        <img src={product.src} alt=""/>*/}
-                {/*        <p>{product.name}</p>*/}
-                {/*        <ReactStars {...options}/>*/}
-                {/*        <p>({product.numOfReviews} Reviews)</p>*/}
-                {/*        <p>₹ {product.price}</p>*/}
-                {/*    </div>*/}
-                {/*))}*/}
-
-                {products && products.map((product, index)=>(
-                    <Link to = {`/product/${product._id}`}>
-                        <div className="products_wrapper" key={index}>
-                            <img src={product.images[0].url} alt=""/>
-                            <p id="product-name">{product.name}</p>
-                            <Rating {...options}
-                                        value = {product.ratings}/>
-                            <p>({product.numOfReviews} Reviews)</p>
-                            <p>₹ {product.price}</p>
-                        </div>
-                    </Link>
-                ))}
-            </div>
-        </div>
             {resultPerPage < count && (
                 <div className="paginationBox">
                     <Pagination
@@ -179,7 +182,8 @@ const AllProducts = () => {
                     />
                 </div>
             )}
-            <Footer/>
+            {/*<Footer/>*/}
+        {/*</div>*/}
         </Fragment>
     );
 };

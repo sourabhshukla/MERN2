@@ -97,7 +97,7 @@ const Cart = () => {
                             </div>
                         </div>
                     </div>
-                    <Footer/>
+                    {/*<Footer/>*/}
                 </Fragment>
             )}
         </Fragment>

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState, Fragment} from 'react';
 import Header from "../../Components/Header/Header";
 import "./LognSignUp.css";
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
@@ -7,10 +7,12 @@ import FaceIcon from '@mui/icons-material/Face';
 import {Link, useLocation} from "react-router-dom";
 import {useNavigate} from "react-router";
 import Profile from "../../images/Profile.png";
+import Man from "../../images/Man.png";
 import {useDispatch, useSelector} from "react-redux";
 import {clearErrors, login, register} from "../../actions/userAction";
 import {useAlert} from "react-alert";
 import Loader from "../../Components/Loader/Loader";
+import useWindowDimensions from "../../Components/Dimentions";
 
 
 const LoginSignUp = () => {
@@ -20,11 +22,14 @@ const LoginSignUp = () => {
     const location=useLocation();
     const {loading, error, isAuthenticated} = useSelector((state) => state.user);
     const alert = useAlert();
+    const loginTab = useRef(null);
+    const registerTab = useRef(null);
+    const switcherTab = useRef(null);
 
-    const [buttonStatus,setButtonStatus]=useState(0);
+    // const [buttonStatus,setButtonStatus]=useState(0);
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
-    const [avatar, setAvatar] = useState();
+    const [avatar, setAvatar] = useState(Man);
     const [avatarPreview, setAvatarPreview] = useState(Profile);
     const [user, setUser] = useState({
         name: "",
@@ -32,10 +37,10 @@ const LoginSignUp = () => {
         password: ""
     });
     const {name, email, password}=user;
-    const login_button=useRef(null);
-    const register_button=useRef(null);
-    const login_form=useRef(null);
-    const register_form=useRef(null);
+    // const login_button=useRef(null);
+    // const register_button=useRef(null);
+    // const login_form=useRef(null);
+    // const register_form=useRef(null);
 
     const redirect = location.search ? location.search.split("=")[1] : "/account";
 
@@ -86,70 +91,189 @@ const LoginSignUp = () => {
         }
     }
 
-    function toggleLoginRegisterBtn() {
-        if(buttonStatus===0){
-            setButtonStatus(1);
-            login_button.current.style.borderBottomColor="transparent";
-            login_button.current.style.color="black";
-            login_form.current.style.display="none";
-            register_button.current.style.borderBottomColor="tomato";
-            register_button.current.style.color="tomato";
-            register_form.current.style.display="flex";
+    // function toggleLoginRegisterBtn() {
+    //     if(buttonStatus===0){
+    //         setButtonStatus(1);
+    //         login_button.current.style.borderBottomColor="transparent";
+    //         login_button.current.style.color="black";
+    //         login_form.current.style.display="none";
+    //         register_button.current.style.borderBottomColor="tomato";
+    //         register_button.current.style.color="tomato";
+    //         register_form.current.style.display="flex";
+    //     }
+    //     else if(buttonStatus===1){
+    //         setButtonStatus(0);
+    //         login_button.current.style.borderBottomColor="tomato";
+    //         login_button.current.style.color="tomato";
+    //         login_form.current.style.display="flex";
+    //         register_button.current.style.borderBottomColor="transparent";
+    //         register_button.current.style.color="black";
+    //         register_form.current.style.display="none";
+    //     }
+    // }
+
+    const switchTabs = (e, tab) => {
+        if (tab === "login") {
+            switcherTab.current.classList.add("shiftToNeutral");
+            switcherTab.current.classList.remove("shiftToRight");
+
+            registerTab.current.classList.remove("shiftToNeutralForm");
+            loginTab.current.classList.remove("shiftToLeft");
         }
-        else if(buttonStatus===1){
-            setButtonStatus(0);
-            login_button.current.style.borderBottomColor="tomato";
-            login_button.current.style.color="tomato";
-            login_form.current.style.display="flex";
-            register_button.current.style.borderBottomColor="transparent";
-            register_button.current.style.color="black";
-            register_form.current.style.display="none";
+        if (tab === "register") {
+            switcherTab.current.classList.add("shiftToRight");
+            switcherTab.current.classList.remove("shiftToNeutral");
+
+            registerTab.current.classList.add("shiftToNeutralForm");
+            loginTab.current.classList.add("shiftToLeft");
         }
-    }
+    };
+
+    // return (
+    //     <>
+    //         {loading?<Loader/>:(
+    //             <>
+    //                 <Header/>
+    //                 <div className="login_signup_wrapper">
+    //                     <div className="login_signup_container">
+    //                         <div className="login_signup_buttons">
+    //                             <div className="login_button" ref={login_button} onClick={toggleLoginRegisterBtn}>LOGIN</div>
+    //                             <div className="register_button" ref={register_button} onClick={toggleLoginRegisterBtn}>REGISTER</div>
+    //                         </div>
+    //                         <form className="login_form" ref={login_form} onSubmit={loginSubmit}>
+    //                             <div className="login_email">
+    //                                 <MailOutlineIcon/>
+    //                                 <input
+    //                                     type="text"
+    //                                     placeholder="Email"
+    //                                     value={loginEmail}
+    //                                     onChange={(e)=>setLoginEmail(e.target.value)}
+    //                                     required
+    //                                 />
+    //                             </div>
+    //                             <div className="login_password">
+    //                                 <LockOpenIcon/>
+    //                                 <input
+    //                                     type="password"
+    //                                     placeholder="Password"
+    //                                     value={loginPassword}
+    //                                     onChange={(e)=>setLoginPassword(e.target.value)}
+    //                                     required
+    //                                 />
+    //                             </div>
+    //                             <Link to="/password/forgot">Forgot Password ?</Link>
+    //                             <input type="submit" value="Login" className="loginBtn"/>
+    //                         </form>
+    //                         <form
+    //                             className="register_form"
+    //                             ref={register_form}
+    //                             encType="multipart/form-data"
+    //                             onSubmit={registerSubmit}
+    //                         >
+    //                             <div className="register_name">
+    //                                 <FaceIcon/>
+    //                                 <input
+    //                                     type="text"
+    //                                     placeholder="Name"
+    //                                     required
+    //                                     name="name"
+    //                                     value={name}
+    //                                     onChange={registerDataChange}
+    //                                 />
+    //                             </div>
+    //                             <div className="register_email">
+    //                                 <MailOutlineIcon/>
+    //                                 <input
+    //                                     type="email"
+    //                                     placeholder="Email"
+    //                                     required
+    //                                     name="email"
+    //                                     value={email}
+    //                                     onChange={registerDataChange}
+    //                                 />
+    //                             </div>
+    //                             <div className="register_password">
+    //                                 <LockOpenIcon/>
+    //                                 <input
+    //                                     type="password"
+    //                                     placeholder="Password"
+    //                                     required
+    //                                     name="password"
+    //                                     value={password}
+    //                                     onChange={registerDataChange}
+    //                                 />
+    //                             </div>
+    //                             <div className="register_image">
+    //                                 <img src={avatarPreview} alt=""/>
+    //                                 <input
+    //                                     type="file"
+    //                                     name="avatar"
+    //                                     accept="image/*"
+    //                                     onChange={registerDataChange}
+    //                                 />
+    //                             </div>
+    //                             <input
+    //                                 type="submit"
+    //                                 value="Register"
+    //                                 className="signUpBtn"
+    //                                 // disabled={loading ? true : false}
+    //                             />
+    //                         </form>
+    //                     </div>
+    //                 </div>
+    //             </>
+    //         )}
+    //     </>
+    // );
 
     return (
-        <>
-            {loading?<Loader/>:(
-                <>
+        <Fragment>
+            {loading ? (
+                <Loader />
+            ) : (
+                <Fragment>
                     <Header/>
-                    <div className="login_signup_wrapper">
-                        <div className="login_signup_container">
-                            <div className="login_signup_buttons">
-                                <div className="login_button" ref={login_button} onClick={toggleLoginRegisterBtn}>LOGIN</div>
-                                <div className="register_button" ref={register_button} onClick={toggleLoginRegisterBtn}>REGISTER</div>
+                    <div className="LoginSignUpContainer">
+                        <div className="LoginSignUpBox">
+                            <div>
+                                <div className="login_signUp_toggle">
+                                    <p onClick={(e) => switchTabs(e, "login")}>LOGIN</p>
+                                    <p onClick={(e) => switchTabs(e, "register")}>REGISTER</p>
+                                </div>
+                                <button ref={switcherTab}></button>
                             </div>
-                            <form className="login_form" ref={login_form} onSubmit={loginSubmit}>
-                                <div className="login_email">
-                                    <MailOutlineIcon/>
+                            <form className="loginForm" ref={loginTab} onSubmit={loginSubmit}>
+                                <div className="loginEmail">
+                                    <MailOutlineIcon />
                                     <input
-                                        type="text"
+                                        type="email"
                                         placeholder="Email"
-                                        value={loginEmail}
-                                        onChange={(e)=>setLoginEmail(e.target.value)}
                                         required
+                                        value={loginEmail}
+                                        onChange={(e) => setLoginEmail(e.target.value)}
                                     />
                                 </div>
-                                <div className="login_password">
-                                    <LockOpenIcon/>
+                                <div className="loginPassword">
+                                    <LockOpenIcon />
                                     <input
                                         type="password"
                                         placeholder="Password"
-                                        value={loginPassword}
-                                        onChange={(e)=>setLoginPassword(e.target.value)}
                                         required
+                                        value={loginPassword}
+                                        onChange={(e) => setLoginPassword(e.target.value)}
                                     />
                                 </div>
-                                <Link to="/password/forgot">Forgot Password ?</Link>
-                                <input type="submit" value="Login" className="loginBtn"/>
+                                <Link to="/password/forgot">Forget Password ?</Link>
+                                <input type="submit" value="Login" className="loginBtn" />
                             </form>
                             <form
-                                className="register_form"
-                                ref={register_form}
+                                className="signUpForm"
+                                ref={registerTab}
                                 encType="multipart/form-data"
                                 onSubmit={registerSubmit}
                             >
-                                <div className="register_name">
-                                    <FaceIcon/>
+                                <div className="signUpName">
+                                    <FaceIcon />
                                     <input
                                         type="text"
                                         placeholder="Name"
@@ -159,8 +283,8 @@ const LoginSignUp = () => {
                                         onChange={registerDataChange}
                                     />
                                 </div>
-                                <div className="register_email">
-                                    <MailOutlineIcon/>
+                                <div className="signUpEmail">
+                                    <MailOutlineIcon />
                                     <input
                                         type="email"
                                         placeholder="Email"
@@ -170,8 +294,8 @@ const LoginSignUp = () => {
                                         onChange={registerDataChange}
                                     />
                                 </div>
-                                <div className="register_password">
-                                    <LockOpenIcon/>
+                                <div className="signUpPassword">
+                                    <LockOpenIcon />
                                     <input
                                         type="password"
                                         placeholder="Password"
@@ -181,8 +305,9 @@ const LoginSignUp = () => {
                                         onChange={registerDataChange}
                                     />
                                 </div>
-                                <div className="register_image">
-                                    <img src={avatarPreview} alt=""/>
+
+                                <div id="registerImage">
+                                    <img src={avatarPreview} alt="Avatar Preview" />
                                     <input
                                         type="file"
                                         name="avatar"
@@ -190,18 +315,13 @@ const LoginSignUp = () => {
                                         onChange={registerDataChange}
                                     />
                                 </div>
-                                <input
-                                    type="submit"
-                                    value="Register"
-                                    className="signUpBtn"
-                                    // disabled={loading ? true : false}
-                                />
+                                <input type="submit" value="Register" className="signUpBtn" />
                             </form>
                         </div>
                     </div>
-                </>
+                </Fragment>
             )}
-        </>
+        </Fragment>
     );
 };
 

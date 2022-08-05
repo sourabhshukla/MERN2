@@ -13,6 +13,7 @@ import ProtectedRoute from "./Components/Route/ProtectedRoute";
 import axios from "axios";
 import {Elements} from "@stripe/react-stripe-js";
 import {loadStripe} from "@stripe/stripe-js";
+import Footer from "./Components/Footer/Footer";
 //import AllProducts from "./Pages/AllProducts/AllProducts";
 const AllProducts = lazy(()=>import('./Pages/AllProducts/AllProducts'));
 // import LoginSignUp from "./Pages/LoginSignUp/LoginSignUp";
@@ -158,6 +159,7 @@ function App() {
               <Route path="*" element={<NotFound/>}/>
 
           </Routes></Suspense>
+          <Footer/>
       </>
     </div>
   );

@@ -1,4 +1,5 @@
 import React, {Fragment,useEffect, useState} from 'react';
+import "./UpdateProduct.css";
 import {useDispatch, useSelector} from "react-redux";
 import {useAlert} from "react-alert";
 import {useNavigate, useParams} from "react-router-dom";
@@ -29,10 +30,10 @@ const UpdateProduct = () => {
     } = useSelector((state) => state.product);
 
     const [name, setName] = useState("");
-    const [price, setPrice] = useState(0);
+    const [price, setPrice] = useState("0");
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
-    const [Stock, setStock] = useState(0);
+    const [Stock, setStock] = useState("0");
     const [images, setImages] = useState([]);
     const [oldImages, setOldImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([]);
@@ -57,7 +58,7 @@ const UpdateProduct = () => {
             setDescription(product.description);
             setPrice(product.price);
             setCategory(product.category);
-            setStock(product.Stock);
+            setStock(product.stock);
             setOldImages(product.images);
         }
         if (error) {
@@ -95,7 +96,7 @@ const UpdateProduct = () => {
         myForm.set("price", price);
         myForm.set("description", description);
         myForm.set("category", category);
-        myForm.set("Stock", Stock);
+        myForm.set("stock", Stock);
 
         images.forEach((image) => {
             myForm.append("images", image);

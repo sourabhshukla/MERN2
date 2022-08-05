@@ -37,7 +37,7 @@ const Shipping = () => {
     const [city, setCity] = useState(shippingInfo.city);
     const [state, setState] = useState(shippingInfo.state);
      // const [country, setCountry] = useState(shippingInfo.country);
-    const [country, setCountry] = useState("India");
+    const [country, setCountry] = useState("IN");
     const [pinCode, setPinCode] = useState(shippingInfo.pinCode);
     const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
 
@@ -58,7 +58,9 @@ const Shipping = () => {
     return (
         <Fragment>
             <Header/>
-            <CheckoutSteps activeStep={0} />
+            <div className="checkout-steps">
+                <CheckoutSteps activeStep={0} />
+            </div>
             <div className="shippingContainer">
                 <div className="shippingBox">
                     <h2 className="shippingHeading">Shipping Details</h2>

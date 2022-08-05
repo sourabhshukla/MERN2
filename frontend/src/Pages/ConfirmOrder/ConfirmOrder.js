@@ -49,7 +49,9 @@ const ConfirmOrder = () => {
     return (
         <Fragment>
             <Header/>
-            <CheckoutSteps activeStep={1}/>
+            <div className="checkout-steps">
+                <CheckoutSteps activeStep={1} />
+            </div>
             <div className="confirmOrderPage">
                 <div>
                     <div className="confirmShippingArea">
@@ -117,7 +119,7 @@ const ConfirmOrder = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            {/*<Footer/>*/}
         </Fragment>
     );
 };

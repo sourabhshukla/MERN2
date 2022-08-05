@@ -12,9 +12,11 @@ import {DataGrid} from "@mui/x-data-grid";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Header from "../../Components/Header/Header";
+import {useNavigate} from "react-router";
 
 const OrderList = ({ history }) => {
     const dispatch = useDispatch();
+    const navigate=useNavigate();
 
     const alert = useAlert();
 
@@ -39,7 +41,8 @@ const OrderList = ({ history }) => {
 
         if (isDeleted) {
             alert.success("Order Deleted Successfully");
-            history.push("/admin/orders");
+            // history.push("/admin/orders");
+            navigate("/admin/orders");
             dispatch({ type: DELETE_ORDER_RESET });
         }
 

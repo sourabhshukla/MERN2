@@ -13,6 +13,7 @@ import {useAlert} from "react-alert";
 import {CardCvcElement, CardExpiryElement, CardNumberElement, useElements, useStripe} from "@stripe/react-stripe-js";
 import axios from "axios";
 import {clearErrors, createOrder} from "../../actions/orderAction";
+import {emptyCart} from "../../actions/cartAction";
 
 const Payment = () => {
     const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
@@ -90,6 +91,7 @@ const Payment = () => {
                     };
 
                     dispatch(createOrder(order));
+                    dispatch(emptyCart());
 
                     navigate("/success");
                 } else {
@@ -117,7 +119,9 @@ const Payment = () => {
     return (
         <Fragment>
             <Header/>
-            <CheckoutSteps activeStep={2}/>
+            <div className="checkout-steps">
+                <CheckoutSteps activeStep={2}/>
+            </div>
             <div className="paymentContainer">
                 <form
                     className="paymentForm"
@@ -145,7 +149,7 @@ const Payment = () => {
                     />
                 </form>
             </div>
-            <Footer/>
+            {/*<Footer/>*/}
         </Fragment>
     );
 };

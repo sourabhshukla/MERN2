@@ -2,7 +2,7 @@ import React, {Fragment, useEffect, useState} from 'react';
 import "./SingleProduct.css";
 import ReactStars from "react-rating-stars-component/dist/react-stars";
 import {reviews} from "../../data";
-import man from "../../images/man.png";
+import man from "../../images/Man.png";
 import ReviewCard from "../ReviewCard/ReviewCard";
 import { useAlert } from "react-alert";
 import { useSelector, useDispatch } from "react-redux";

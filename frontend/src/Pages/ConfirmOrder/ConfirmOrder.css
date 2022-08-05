@@ -1,3 +1,7 @@
+.checkout-steps{
+    margin-top: 20px;
+}
+
 .confirmOrderPage{
     height: 100vh;
     background-color: white;
@@ -115,6 +119,7 @@
     width: 100%;
     padding: 1vmax;
     border: none;
+    border-radius: 4px;
     margin: auto;
     cursor: pointer;
     transition: 0.5s;

@@ -187,7 +187,7 @@ const NewProduct = () => {
                     </form>
                 </div>
             </div>
-            <Footer/>
+            {/*<Footer/>*/}
         </Fragment>
     );
 };

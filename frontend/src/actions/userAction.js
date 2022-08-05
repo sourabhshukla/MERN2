@@ -81,7 +81,7 @@ export const updateProfile = (userData) => async (dispatch) => {
     catch (e) {
         dispatch({
             type: UPDATE_PROFILE_FAIL,
-            payload: e.response.data.message
+             payload: e.response.data.message
         })
     }
 }

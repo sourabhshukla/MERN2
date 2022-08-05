@@ -15,7 +15,7 @@ exports.registerUser = catchAsyncErrors(async(req,res,next)=>{
         crop:"scale"
     },
         function(error,result){
-        if(error.message==="Could not decode base64"){
+        if(error && error.message==="Could not decode base64"){
             return next(new ErrorHandler("Image size should be less than 750KB", 500));
         }
         });

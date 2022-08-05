@@ -134,7 +134,7 @@ const OrderDetails = () => {
                            </div>
                        </div>
                    </div>
-                   <Footer/>
+                   {/*<Footer/>*/}
                </Fragment>
            )}
        </Fragment>

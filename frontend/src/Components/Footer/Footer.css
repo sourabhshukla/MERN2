@@ -75,3 +75,10 @@ footer{
 .rightFooter > a:hover {
     color: #eb4034;
 }
+
+@media (max-width: 600px){
+    /*footer{*/
+    /*    position: absolute;*/
+    /*    top: 550px;*/
+    /*}*/
+}

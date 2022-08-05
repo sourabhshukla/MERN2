@@ -6,7 +6,7 @@ const ErrorHandler = require("./utils/errorHandler");
 
 // Handling Uncaught Exception
 process.on("uncaughtException",(err)=>{
-    console.log(`Error: ${err.message}`);
+    console.log(`Error: ${err.message} \n ${err.stack}`);
     console.log(`Shutting down the server due to Uncaught Exception`);
     process.exit(1);
 })

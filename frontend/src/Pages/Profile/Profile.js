@@ -1,6 +1,6 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
-import man from "../../images/man.png";
+import man from "../../images/Man.png";
 import "./Profile.css";
 import Header from "../../Components/Header/Header";
 import {useSelector} from "react-redux";

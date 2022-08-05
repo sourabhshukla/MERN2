@@ -1,6 +1,7 @@
 import React, {Fragment, useEffect, useRef, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Avatar from '@mui/material/Avatar';
@@ -13,6 +14,7 @@ import "./Header.css";
 import {useSelector, useDispatch} from "react-redux";
 import {useAlert} from "react-alert";
 import {logout} from "../../actions/userAction";
+import {emptyCart} from "../../actions/cartAction";
 
 const Header = () => {
     const [icon,setIcon] = useState(0);
@@ -38,7 +40,9 @@ const Header = () => {
 
     function logoutUser(){
         dispatch(logout());
+        dispatch(emptyCart());
         alert.success("Logged Out Successfully");
+        navigate("/login");
     }
 
     function dashboard(){
@@ -154,7 +158,7 @@ const Header = () => {
 
             <form onSubmit={searchSubmitHandler}>
             <div className="header_search_container1" ref={input_bar2} id="dropdown_search_bar">
-                <SearchIcon/>
+                <ArrowBackIcon onClick={onSearchClick} id="arrow_back"/>
 
                     <input
                         type="text"

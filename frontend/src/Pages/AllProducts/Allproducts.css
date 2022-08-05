@@ -144,3 +144,31 @@
 .pageLinkActive{
     color: white;
 }
+
+/*.abcd{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
+@media (max-width: 600px){
+    .all_products_container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filters_container{
+        width: 100%;
+        padding: 4vw;
+    }
+
+    .filters_container_price>input{
+        height: auto;
+        width: 20vw;
+    }
+
+    .filters_container_price>button{
+        height: auto;
+        width: auto;
+        padding: 1vw;
+    }
+}

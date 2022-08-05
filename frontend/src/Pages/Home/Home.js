@@ -9,9 +9,11 @@ const Home = () => {
     return (
         <Fragment>
          <Header/>
-            <Slider/>
-            <Categories/>
-            <Footer/>
+            <div className="abcd">
+                <Slider/>
+                <Categories/>
+                {/*<Footer/>*/}
+            </div>
         </Fragment>
     );
 };

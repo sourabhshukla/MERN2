@@ -80,7 +80,7 @@ const UpdateProfile = () => {
                     <div className="update_profile_wrapper">
                         <div className="update_profile_container">
                             <div className="update_profile_heading">
-                                <h2>Update Profile</h2>
+                                <p>Update Profile</p>
                             </div>
                             <form
                                 encType="multipart/form-date"
