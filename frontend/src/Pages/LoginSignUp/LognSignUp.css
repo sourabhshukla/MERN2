@@ -1,0 +1,437 @@
+/*.login_signup_wrapper{*/
+/*    width: 100vw;*/
+/*    height: 100vh;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    !*background-color: red;*!*/
+/*    background-color: rgb(231, 231, 231);*/
+/*}*/
+
+/*.login_signup_container{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    transition: all 0.5s ease-in;*/
+/*    background-color: white;*/
+/*    width: 25vw;*/
+/*    height: 70vh;*/
+/*}*/
+
+/*.login_signup_buttons{*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
+
+/*.login_button{*/
+/*    cursor: pointer;*/
+/*    color: tomato;*/
+/*    display: flex;*/
+/*    padding: 2vh;*/
+/*    transition: all 0.3s ease-in;*/
+/*    border-bottom: 2px solid red;*/
+/*    justify-content: center;*/
+/*    flex: 1;*/
+/*}*/
+
+/*.register_button{*/
+/*    cursor: pointer;*/
+/*    display: flex;*/
+/*    border-bottom: 2px solid transparent;*/
+/*    transition: all 0.3s ease-in;*/
+/*    padding: 2vh;*/
+/*    justify-content: center;*/
+/*    flex: 1;*/
+/*}*/
+
+/*.login_form{*/
+/*    display: flex;*/
+/*    padding: 2vw;*/
+/*    flex-direction: column;*/
+/*    justify-content: space-evenly;*/
+/*    height: 70%;*/
+/*}*/
+
+/*.login_form>div>svg{*/
+/*    color: rgba(0,0,0,0.623);*/
+/*}*/
+
+/*.login_form>a{*/
+/*    color: rgba(0,0,0,0.651);*/
+/*    text-decoration: none;*/
+/*    align-self: flex-end;*/
+/*    transition: all 0.5s;*/
+/*    font: 500 0.8vmax "Gill Sans";*/
+/*}*/
+
+/*.login_form>a:hover{*/
+/*    color: black;*/
+/*}*/
+
+/*.login_form>div{*/
+/*    border: 1px solid rgba(0,0,0,0.267);*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.login_form>div>input{*/
+/*    outline: none;*/
+/*    padding: 1vmax;*/
+/*    border: none;*/
+/*    font: 300 1.2vmax cursive;*/
+/*}*/
+
+/*.login_form>input{*/
+/*    background-color: tomato;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*    outline: none;*/
+/*    transition: all 0.5s;*/
+/*    border-radius: 4px;*/
+/*    padding: 0.8vmax;*/
+/*    box-shadow: 0 2px 5px rgba(0,0,0,0.219);*/
+/*}*/
+
+/*.register_form>input{*/
+/*    background-color: tomato;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*    outline: none;*/
+/*    transition: all 0.5s;*/
+/*    border-radius: 4px;*/
+/*    padding: 0.8vmax;*/
+/*    box-shadow: 0 2px 5px rgba(0,0,0,0.219);*/
+/*}*/
+
+/*!*.login_email{*!*/
+/*!*    display: flex;*!*/
+/*!*    justify-content: center;*!*/
+/*!*    align-items: center;*!*/
+/*!*}*!*/
+
+/*!*.login_password{*!*/
+/*!*    display: flex;*!*/
+/*!*    justify-content: center;*!*/
+/*!*    align-items: center;*!*/
+/*!*}*!*/
+
+
+/*.register_form{*/
+/*    display: none;*/
+/*    flex-direction: column;*/
+/*    justify-content: space-evenly;*/
+/*    padding: 2vw;*/
+/*    height: 100%;*/
+/*}*/
+
+/*.register_form>div{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    border: 1px solid rgba(0,0,0,0.267);*/
+/*}*/
+
+/*.register_form>div>input{*/
+/*    outline: none;*/
+/*    padding: 1vmax;*/
+/*    border: none;*/
+/*    font: 300 1.2vmax cursive;*/
+/*}*/
+
+/*.register_form>div>svg{*/
+/*    color: rgba(0,0,0,0.623);*/
+/*}*/
+
+/*.register_image>img{*/
+/*    width: 3vmax;*/
+/*    border-radius: 100%;*/
+/*}*/
+
+/*.register_image>input::file-selector-button{*/
+/*    cursor: pointer;*/
+/*    width: 100%;*/
+/*    z-index: 2;*/
+/*    height: 5vh;*/
+/*    border: none;*/
+/*    margin-right: 20px;*/
+/*    font: 400 0.8vmax cursive;*/
+/*    transition: all 0.5s;*/
+/*    padding: 0 1vmax;*/
+/*    color: rgba(0, 0, 0, 0.623);*/
+/*    !*background-color: rgb(255, 255, 255);*!*/
+/*}*/
+
+/*.register_image > input::file-selector-button:hover {*/
+/*    !*background-color: rgb(235, 235, 235);*!*/
+/*}*/
+
+/*@media screen and (max-width: 600px) {*/
+/*    .login_signup_wrapper {*/
+/*        background-color: white;*/
+/*    }*/
+/*    .login_signup_container {*/
+/*        width: 100vw;*/
+/*        height: 660px;*/
+/*    }*/
+/*    .login_signUp_buttons {*/
+/*        height: 5vmax;*/
+/*    }*/
+/*    .login_signUp_buttons > p {*/
+/*        font: 300 1.5vmax "Roboto";*/
+/*    }*/
+
+/*    .login_form,*/
+/*    .register_form {*/
+/*        padding: 5vmax;*/
+/*    }*/
+
+/*    .login_form>input,*/
+/*    .register_form>input {*/
+/*        padding: 12px;*/
+/*    }*/
+
+/*    .login_form > div > input,*/
+/*    .register_form > div > input {*/
+/*        padding: 2.5vmax 5vmax;*/
+/*        font: 300 1.7vmax cursive;*/
+/*    }*/
+
+/*    .login_form > div > svg,*/
+/*    .register_form > div > svg {*/
+/*        font-size: 2.8vmax;*/
+/*    }*/
+
+/*    .login_form > a {*/
+/*        font: 500 1.8vmax "Gill Sans";*/
+/*    }*/
+
+/*    .register_image > img {*/
+/*        width: 6vmax;*/
+/*        border-radius: 100%;*/
+/*    }*/
+
+/*    .register_image > input::file-selector-button {*/
+/*        height: 7vh;*/
+/*        font: 400 1.8vmax cursive;*/
+/*    }*/
+
+/*    .login_button,*/
+/*    .register_button {*/
+/*        font: 300 1.9vmax "Roboto";*/
+/*        padding: 12px;*/
+/*    }*/
+/*}*/
+
+.LoginSignUpContainer {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 231, 231);
+    position: fixed;
+    /*top: 0;*/
+    left: 0;
+}
+
+.LoginSignUpBox {
+    background-color: white;
+    width: 25vw;
+    height: 70vh;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.login_signUp_toggle {
+    display: flex;
+    height: 3vmax;
+}
+.login_signUp_toggle > p {
+    color: rgba(0, 0, 0, 0.678);
+    font: 300 1vmax "Roboto";
+    transition: all 0.5s;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+.login_signUp_toggle > p:hover {
+    color: tomato;
+}
+
+.LoginSignUpBox > div > button {
+    background-color: tomato;
+    height: 3px;
+    width: 50%;
+    border: none;
+    transition: all 0.5s;
+}
+
+.loginForm,
+.signUpForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: 2vmax;
+    justify-content: space-evenly;
+    height: 70%;
+    transition: all 0.5s;
+}
+
+.signUpForm {
+    transform: translateY(-100%) translateX(-100vmax);
+}
+
+.loginForm > div,
+.signUpForm > div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.loginForm > div > input,
+.signUpForm > div > input {
+    padding: 1vmax 4vmax;
+    padding-right: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 4px;
+    font: 300 0.9vmax cursive;
+    outline: none;
+}
+
+.loginForm > div > svg,
+.signUpForm > div > svg {
+    position: absolute;
+    transform: translateX(1vmax);
+    font-size: 1.6vmax;
+    color: rgba(0, 0, 0, 0.623);
+}
+
+.loginForm > a {
+    color: rgba(0, 0, 0, 0.651);
+    text-decoration: none;
+    align-self: flex-end;
+    transition: all 0.5s;
+    font: 500 0.8vmax "Gill Sans";
+}
+
+.loginForm > a:hover {
+    color: black;
+}
+
+#registerImage > img {
+    width: 3vmax;
+    border-radius: 100%;
+}
+#registerImage > input {
+    display: flex;
+    padding: 0%;
+}
+
+#registerImage > input::file-selector-button {
+    cursor: pointer;
+    width: 100%;
+    z-index: 2;
+    height: 5vh;
+    border: none;
+    margin: 0;
+    font: 400 0.8vmax cursive;
+    transition: all 0.5s;
+    padding: 0 1vmax;
+    color: rgba(0, 0, 0, 0.623);
+    background-color: rgb(255, 255, 255);
+}
+
+#registerImage > input::file-selector-button:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+.loginBtn,
+.signUpBtn {
+    border: none;
+    background-color: tomato;
+    color: white;
+    font: 300 0.9vmax "Roboto";
+    width: 100%;
+    padding: 0.8vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+}
+
+.loginBtn:hover,
+.signUpBtn:hover {
+    background-color: rgb(179, 66, 46);
+}
+
+.shiftToLeft {
+    transform: translateX(-100%);
+}
+.shiftToNeutral {
+    transform: translateX(0%);
+}
+
+.shiftToNeutralForm {
+    transform: translateX(0%) translateY(-100%);
+}
+
+.shiftToRight {
+    transform: translateX(100%);
+}
+
+@media screen and (max-width: 600px) {
+    .LoginSignUpContainer {
+        background-color: white;
+        height: 800px;
+    }
+    .LoginSignUpBox {
+        width: 100vw;
+        height: 800px;
+    }
+    .login_signUp_toggle {
+        height: 35px;
+    }
+    .login_signUp_toggle > p {
+        font: 300 12px "Roboto";
+    }
+
+    .loginForm,
+    .signUpForm {
+        padding: 40px;
+    }
+
+    .loginForm > div > input,
+    .signUpForm > div > input {
+        padding: 20px 40px;
+        font: 300 13.6px cursive;
+    }
+
+    .loginForm > div > svg,
+    .signUpForm > div > svg {
+        font-size: 22.4px;
+    }
+
+    .loginForm > a {
+        font: 500 13.6px "Gill Sans";
+    }
+
+    #registerImage > img {
+        width: 64px;
+        border-radius: 100%;
+    }
+
+    #registerImage > input::file-selector-button {
+        height: 56px;
+        font: 400 14.4px cursive;
+    }
+
+    .loginBtn,
+    .signUpBtn {
+        font: 300 15.2px "Roboto";
+        padding: 14.4px;
+    }
+}

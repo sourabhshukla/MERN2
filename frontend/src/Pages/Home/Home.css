@@ -1,0 +1,9 @@
+.home_page{
+    display: flex;
+    flex-direction: column;
+}
+
+.abcd{
+    display: flex;
+    flex-direction: column;
+}
